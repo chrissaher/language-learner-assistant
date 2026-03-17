@@ -1,0 +1,18 @@
+{
+  "word": "patron",
+  "base_form": "patron",
+  "word_type": "noun",
+  "generated_at": "2026-03-17T11:30:00Z",
+  "sentences": [
+    {"id": 1, "target": "Le patron arrive tôt.", "translation": "The boss arrives early.", "level": "simple", "grammar_note": "Masculine singular with definite article (le)"},
+    {"id": 2, "target": "Je vois un patron.", "translation": "I see a boss.", "level": "simple", "grammar_note": "Masculine singular with indefinite article (un)"},
+    {"id": 3, "target": "Le patron parle français.", "translation": "The boss speaks French.", "level": "simple", "grammar_note": "Masculine singular; verb conjugation for 3rd person"},
+    {"id": 4, "target": "Les patrons sont gentils.", "translation": "The bosses are kind.", "level": "medium", "grammar_note": "Masculine plural with definite article (les); plural adjective (gentils)"},
+    {"id": 5, "target": "Des patrons travaillent ici.", "translation": "Some bosses work here.", "level": "medium", "grammar_note": "Masculine plural with indefinite article (des)"},
+    {"id": 6, "target": "J'ai rencontré le patron hier.", "translation": "I met the boss yesterday.", "level": "medium", "grammar_note": "Passé composé with avoir; definite article (le)"},
+    {"id": 7, "target": "Le patron a demandé une réunion importante.", "translation": "The boss asked for an important meeting.", "level": "complex", "grammar_note": "Passé composé, 3rd person singular; adjective agreement (importante, feminine to match réunion)"},
+    {"id": 8, "target": "Les patrons ont décidé de fermer le bureau.", "translation": "The bosses decided to close the office.", "level": "complex", "grammar_note": "Passé composé, 3rd person plural; infinitive construction (de fermer)"},
+    {"id": 9, "target": "Mon patron est très occupé.", "translation": "My boss is very busy.", "level": "simple", "grammar_note": "Possessive adjective (mon) with masculine noun; predicate adjective (occupé)"},
+    {"id": 10, "target": "Le patron de cette entreprise est célèbre.", "translation": "The boss of this company is famous.", "level": "complex", "grammar_note": "Prepositional phrase (de cette entreprise); predicate adjective (célèbre)"}
+  ]
+}

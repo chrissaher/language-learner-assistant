@@ -1,0 +1,18 @@
+{
+  "word": "viande",
+  "base_form": "viande",
+  "word_type": "noun",
+  "generated_at": "2026-03-17T11:30:00Z",
+  "sentences": [
+    {"id": 1, "target": "La viande est rouge.", "translation": "The meat is red.", "level": "simple", "grammar_note": "Feminine singular with definite article (la)"},
+    {"id": 2, "target": "Je ne mange pas de viande.", "translation": "I don't eat meat.", "level": "simple", "grammar_note": "Negative construction with partitive (de); feminine singular"},
+    {"id": 3, "target": "Nous achetons de la viande.", "translation": "We buy meat.", "level": "simple", "grammar_note": "Partitive article (de la) with feminine singular noun"},
+    {"id": 4, "target": "La viande de ce magasin est fraîche.", "translation": "The meat from this store is fresh.", "level": "medium", "grammar_note": "Possessive construction (de ce magasin); predicate adjective (fraîche)"},
+    {"id": 5, "target": "Tu aimes la viande rouge?", "translation": "Do you like red meat?", "level": "medium", "grammar_note": "Present tense verb (aimes); compound adjective (viande rouge)"},
+    {"id": 6, "target": "J'ai acheté de la viande hier.", "translation": "I bought meat yesterday.", "level": "medium", "grammar_note": "Passé composé with avoir; partitive article (de la)"},
+    {"id": 7, "target": "La viande que tu as cuisinée était délicieuse.", "translation": "The meat that you cooked was delicious.", "level": "complex", "grammar_note": "Relative clause (que); passé composé past participle (cuisinée, feminine agreement)"},
+    {"id": 8, "target": "Nous avons mangé trop de viande au dîner.", "translation": "We ate too much meat at dinner.", "level": "complex", "grammar_note": "Passé composé, 1st person plural; adverb (trop); preposition (au = à le)"},
+    {"id": 9, "target": "La viande rouge est riche en protéines.", "translation": "Red meat is rich in protein.", "level": "complex", "grammar_note": "Adjective order; prepositional phrase (en protéines)"},
+    {"id": 10, "target": "Cette viande vient d'une ferme locale.", "translation": "This meat comes from a local farm.", "level": "complex", "grammar_note": "Demonstrative adjective (cette); present tense verb (vient); prepositional phrase (d'une ferme)"}
+  ]
+}

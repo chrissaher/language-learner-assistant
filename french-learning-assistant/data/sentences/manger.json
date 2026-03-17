@@ -1,0 +1,78 @@
+{
+  "word": "manger",
+  "base_form": "manger",
+  "word_type": "verb",
+  "generated_at": "2026-03-17T11:30:00Z",
+  "sentences": [
+    {
+      "id": 1,
+      "target": "Je mange une pomme.",
+      "translation": "I eat an apple.",
+      "level": "simple",
+      "grammar_note": "Present indicative, 1st person singular (je + -e ending for regular -er verbs)"
+    },
+    {
+      "id": 2,
+      "target": "Tu manges du pain?",
+      "translation": "Are you eating bread?",
+      "level": "simple",
+      "grammar_note": "Present indicative, 2nd person singular (tu + -es ending)"
+    },
+    {
+      "id": 3,
+      "target": "Il mange lentement.",
+      "translation": "He eats slowly.",
+      "level": "simple",
+      "grammar_note": "Present indicative, 3rd person singular (il + -e ending, silent)"
+    },
+    {
+      "id": 4,
+      "target": "Nous mangeons ensemble.",
+      "translation": "We eat together.",
+      "level": "medium",
+      "grammar_note": "Present indicative, 1st person plural (nous + -eons ending)"
+    },
+    {
+      "id": 5,
+      "target": "Vous mangez à la maison?",
+      "translation": "Do you (formal) eat at home?",
+      "level": "medium",
+      "grammar_note": "Present indicative, 2nd person plural/formal (vous + -ez ending)"
+    },
+    {
+      "id": 6,
+      "target": "J'ai mangé une pizza hier.",
+      "translation": "I ate a pizza yesterday.",
+      "level": "medium",
+      "grammar_note": "Passé composé: auxiliary avoir (present) + past participle mangé (ends in -é for -er verbs)"
+    },
+    {
+      "id": 7,
+      "target": "Elle a mangé trop de gâteau.",
+      "translation": "She ate too much cake.",
+      "level": "complex",
+      "grammar_note": "Passé composé, 3rd person singular; 'trop' (too much) is an adverb"
+    },
+    {
+      "id": 8,
+      "target": "Ils ont mangé au restaurant pendant deux heures.",
+      "translation": "They ate at the restaurant for two hours.",
+      "level": "complex",
+      "grammar_note": "Passé composé, 3rd person plural; duration phrase (pendant)"
+    },
+    {
+      "id": 9,
+      "target": "Manger sainement est important.",
+      "translation": "Eating healthily is important.",
+      "level": "complex",
+      "grammar_note": "Infinitive as subject of sentence (treated as masculine singular noun)"
+    },
+    {
+      "id": 10,
+      "target": "Nous voulons manger du fromage.",
+      "translation": "We want to eat cheese.",
+      "level": "complex",
+      "grammar_note": "Infinitive construction with 'vouloir'; no subject change needed"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "word": "fête",
+  "base_form": "fête",
+  "word_type": "noun",
+  "generated_at": "2026-03-17T11:30:00Z",
+  "sentences": [
+    {"id": 1, "target": "La fête est amusante.", "translation": "The party is fun.", "level": "simple", "grammar_note": "Feminine singular with definite article (la)"},
+    {"id": 2, "target": "J'aime les fêtes.", "translation": "I like parties.", "level": "simple", "grammar_note": "Feminine plural with definite article (les)"},
+    {"id": 3, "target": "Nous avons une fête demain.", "translation": "We have a party tomorrow.", "level": "simple", "grammar_note": "Feminine singular with indefinite article (une)"},
+    {"id": 4, "target": "Les fêtes sont intéressantes.", "translation": "The parties are interesting.", "level": "medium", "grammar_note": "Feminine plural; adjective agreement (intéressantes)"},
+    {"id": 5, "target": "Tu vas à une fête?", "translation": "Are you going to a party?", "level": "medium", "grammar_note": "Preposition (à); present tense verb (vas)"},
+    {"id": 6, "target": "J'ai organisé une fête hier soir.", "translation": "I organized a party last night.", "level": "medium", "grammar_note": "Passé composé with avoir; feminine singular article (une)"},
+    {"id": 7, "target": "La fête de mon ami était magnifique.", "translation": "My friend's party was magnificent.", "level": "complex", "grammar_note": "Possessive construction (de mon ami); predicate adjective (magnifique)"},
+    {"id": 8, "target": "Nous avons dansé à la fête toute la nuit.", "translation": "We danced at the party all night.", "level": "complex", "grammar_note": "Passé composé, 1st person plural; prepositional phrase (toute la nuit)"},
+    {"id": 9, "target": "Les fêtes m'ont toujours plu.", "translation": "Parties have always pleased me.", "level": "complex", "grammar_note": "Passé composé with avoir; indirect object (m'); adverb (toujours)"},
+    {"id": 10, "target": "Une fête sans amis n'est pas une fête.", "translation": "A party without friends is not a party.", "level": "complex", "grammar_note": "Negative construction; prepositional phrase (sans amis)"}
+  ]
+}
