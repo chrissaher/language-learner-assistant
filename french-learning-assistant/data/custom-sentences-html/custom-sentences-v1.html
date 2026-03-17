@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Sentences v1 — French Learning Assistant</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .sentences-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      border: 3px solid #666;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .accordion-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border-color: #d32f2f;
+      background: var(--bg-primary);
+    }
+
+    .accordion-header {
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .accordion-header:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: -2px;
+    }
+
+    .english-text {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .english-text strong {
+      color: #d32f2f;
+      font-weight: 600;
+    }
+
+    .chevron {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+      color: var(--text-secondary);
+    }
+
+    .accordion-item.expanded .chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .accordion-item.expanded .accordion-content {
+      max-height: 200px;
+    }
+
+    .french-text {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-style: italic;
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .french-text strong {
+      color: #d32f2f;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .vocab-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .vocab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .vocab-header h2 {
+      margin: 0;
+    }
+
+    .collapse-btn {
+      padding: 0.5rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .collapse-btn:hover {
+      background: var(--border-color);
+    }
+
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .vocab-table th, .vocab-table td {
+      border: 1px solid var(--border-color);
+      padding: 0.875rem;
+      text-align: left;
+    }
+
+    .vocab-table th {
+      background: var(--bg-secondary);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .vocab-table tr:nth-child(even) {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .vocab-table tr:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    .word-gender {
+      font-family: monospace;
+      font-weight: 600;
+      color: #d32f2f;
+    }
+
+    .vocab-table.hidden {
+      display: none;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-right: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .badge-sentences {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .badge-vocabulary {
+      background: #2196F3;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .accordion-header {
+        padding: 0.875rem 1rem;
+      }
+
+      .english-text {
+        font-size: 0.95rem;
+      }
+
+      .french-text {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      .vocab-table {
+        font-size: 0.9rem;
+      }
+
+      .vocab-table th, .vocab-table td {
+        padding: 0.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sentences-list {
+        gap: 0.75rem;
+      }
+
+      .english-text {
+        font-size: 0.9rem;
+      }
+
+      .french-text {
+        font-size: 0.9rem;
+      }
+
+      .accordion-header {
+        padding: 0.75rem;
+      }
+
+      .french-text {
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Custom Sentences</h1>
+    <p class="focus">Version 1 · 8 sentences, 9 words · March 17, 2026</p>
+  </header>
+
+  <section id="sentences">
+    <h2><span class="section-badge badge-sentences">Sentences</span>Sentence Pairs</h2>
+
+    <div class="sentences-list">
+      <!-- Sentence 1 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">the boss <strong>is good to his</strong> employees</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">le patron <strong>est gentil avec ses</strong> employés</p>
+        </div>
+      </div>
+
+      <!-- Sentence 2 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">I have a party <strong>tonight</strong></p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Je jais une fête <strong>ce soir</strong></p>
+        </div>
+      </div>
+
+      <!-- Sentence 3 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text"><strong>I am going</strong> to eat two <strong>eggs</strong> for breakfast</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text"><strong>Je vais</strong> manger deux <strong>œufs</strong> au petit-déjeuner</p>
+        </div>
+      </div>
+
+      <!-- Sentence 4 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">I <strong>eat chocolate</strong></p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Je <strong>mange du chocolat</strong></p>
+        </div>
+      </div>
+
+      <!-- Sentence 5 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">Would you like to try my pasta?</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Voulez-vous gouler mes pâtes ?</p>
+        </div>
+      </div>
+
+      <!-- Sentence 6 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">my mom <strong>will prepare</strong> the dinner tonight</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Ma mère <strong>va préparer</strong> le dîner ce soir</p>
+        </div>
+      </div>
+
+      <!-- Sentence 7 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">my partner invited me to have dinner with his family</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Mon copain m'a invité à dîner avec sa famille</p>
+        </div>
+      </div>
+
+      <!-- Sentence 8 -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <p class="english-text">we don't eat <strong>meat</strong> in the evening</p>
+          <span class="chevron">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p class="french-text">Nous ne mangeons pas de <strong>viande</strong> le soir</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vocab-section" id="vocabulary">
+    <div class="vocab-header">
+      <h2><span class="section-badge badge-vocabulary">Vocabulary</span>Word Reference</h2>
+      <button class="collapse-btn" aria-label="Toggle vocabulary list">▼ Hide</button>
+    </div>
+    <table class="vocab-table" id="vocabTable">
+      <thead>
+        <tr>
+          <th>English</th>
+          <th>French</th>
+          <th>Gender</th>
+          <th>Type</th>
+          <th>Alternative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>boss</td>
+          <td>le patron</td>
+          <td><span class="word-gender">m</span></td>
+          <td>noun</td>
+          <td>chef</td>
+        </tr>
+        <tr>
+          <td>companion, partner</td>
+          <td>le compagnon</td>
+          <td><span class="word-gender">m/f</span></td>
+          <td>noun</td>
+          <td>compagne (feminine)</td>
+        </tr>
+        <tr>
+          <td>party, celebration</td>
+          <td>la fête</td>
+          <td><span class="word-gender">f</span></td>
+          <td>noun</td>
+          <td>soirée</td>
+        </tr>
+        <tr>
+          <td>breakfast</td>
+          <td>le petit-déjeuner</td>
+          <td><span class="word-gender">m</span></td>
+          <td>noun</td>
+          <td>petit déj (informal)</td>
+        </tr>
+        <tr>
+          <td>meal</td>
+          <td>le repas</td>
+          <td><span class="word-gender">m</span></td>
+          <td>noun</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>snack</td>
+          <td>le goûter</td>
+          <td><span class="word-gender">f</span></td>
+          <td>noun</td>
+          <td>collation</td>
+        </tr>
+        <tr>
+          <td>to dry</td>
+          <td>sécher</td>
+          <td>—</td>
+          <td>verb</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>dinner</td>
+          <td>le dîner</td>
+          <td><span class="word-gender">m</span></td>
+          <td>noun</td>
+          <td>souper (Quebec)</td>
+        </tr>
+        <tr>
+          <td>meat</td>
+          <td>viande</td>
+          <td><span class="word-gender">f</span></td>
+          <td>noun</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>Generated by French Learning Assistant · Custom Sentences v1</footer>
+</div>
+
+<script>
+  // Accordion functionality
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const item = this.parentElement;
+      const isExpanded = item.classList.contains('expanded');
+
+      // Close all other items
+      document.querySelectorAll('.accordion-item.expanded').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('expanded');
+          openItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle('expanded');
+      this.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
+
+  // Collapse button for vocabulary table
+  const collapseBtn = document.querySelector('.collapse-btn');
+  const vocabTable = document.getElementById('vocabTable');
+
+  if (collapseBtn && vocabTable) {
+    collapseBtn.addEventListener('click', function() {
+      vocabTable.classList.toggle('hidden');
+      this.textContent = vocabTable.classList.contains('hidden') ? '▶ Show' : '▼ Hide';
+    });
+  }
+</script>
+</body>
+</html>

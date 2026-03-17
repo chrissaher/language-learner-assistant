@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "created_at": "2026-03-17T14:30:00Z",
+  "sentence_count": 8,
+  "word_count": 12,
+  "sentences": [
+    {
+      "id": 1,
+      "english": "the boss *is good to his* employees",
+      "french": "le patron *est gentil avec ses* employés",
+      "focus_word_en": "is good to his",
+      "focus_word_fr": "est gentil avec ses",
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 2,
+      "english": "I have a party *tonight*",
+      "french": "Je jais une fête *ce soir*",
+      "focus_word_en": "tonight",
+      "focus_word_fr": "ce soir",
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 3,
+      "english": "*I am going* to eat two *eggs* for breakfast",
+      "french": "*Je vais* manger deux *œufs* au petit-déjeuner",
+      "focus_word_en": "I am going; eggs",
+      "focus_word_fr": "Je vais; œufs",
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 4,
+      "english": "I *eat chocolate*",
+      "french": "Je *mange du chocolat*",
+      "focus_word_en": "eat chocolate",
+      "focus_word_fr": "mange du chocolat",
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 5,
+      "english": "Would you like to try my pasta?",
+      "french": "Voulez-vous gouler mes pâtes ?",
+      "focus_word_en": null,
+      "focus_word_fr": null,
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 6,
+      "english": "my mom *will prepare* the dinner tonight",
+      "french": "Ma mère *va préparer* le dîner ce soir",
+      "focus_word_en": "will prepare",
+      "focus_word_fr": "va préparer",
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 7,
+      "english": "my partner invited me to have dinner with his family",
+      "french": "Mon copain m'a invité à dîner avec sa famille",
+      "focus_word_en": null,
+      "focus_word_fr": null,
+      "topic": null,
+      "level": null
+    },
+    {
+      "id": 8,
+      "english": "we don't eat *meat* in the evening",
+      "french": "Nous ne mangeons pas de *viande* le soir",
+      "focus_word_en": "meat",
+      "focus_word_fr": "viande",
+      "topic": null,
+      "level": null
+    }
+  ],
+  "words": [
+    {
+      "id": 1,
+      "english": "boss",
+      "french": "le patron",
+      "alternative_french": "chef",
+      "word_type": "noun",
+      "gender": "masculine",
+      "topic": null
+    },
+    {
+      "id": 2,
+      "english": "companion, partner",
+      "french": "le compagnon",
+      "alternative_french": "compagne (feminine)",
+      "word_type": "noun",
+      "gender": "masculine/feminine",
+      "topic": null
+    },
+    {
+      "id": 4,
+      "english": "party, celebration",
+      "french": "la fête",
+      "alternative_french": "soirée",
+      "word_type": "noun",
+      "gender": "feminine",
+      "topic": null
+    },
+    {
+      "id": 6,
+      "english": "breakfast",
+      "french": "le petit-déjeuner",
+      "alternative_french": "petit déj (informal)",
+      "word_type": "noun",
+      "gender": "masculine",
+      "topic": null
+    },
+    {
+      "id": 7,
+      "english": "meal",
+      "french": "le repas",
+      "alternative_french": null,
+      "word_type": "noun",
+      "gender": "masculine",
+      "topic": null
+    },
+    {
+      "id": 8,
+      "english": "snack",
+      "french": "le goûter",
+      "alternative_french": "collation",
+      "word_type": "noun",
+      "gender": "feminine",
+      "topic": null
+    },
+    {
+      "id": 9,
+      "english": "to dry",
+      "french": "sécher",
+      "alternative_french": null,
+      "word_type": "verb",
+      "gender": null,
+      "topic": null
+    },
+    {
+      "id": 10,
+      "english": "dinner",
+      "french": "le dîner",
+      "alternative_french": "souper (Quebec)",
+      "word_type": "noun",
+      "gender": "masculine",
+      "topic": null
+    },
+    {
+      "id": 11,
+      "english": "meat",
+      "french": "viande",
+      "alternative_french": null,
+      "word_type": "noun",
+      "gender": "feminine",
+      "topic": null
+    }
+  ]
+}
